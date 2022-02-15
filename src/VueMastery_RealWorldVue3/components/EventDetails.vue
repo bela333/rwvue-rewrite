@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-  import EventService from "@/VueMastery_RealWorldVue3/services/EventService";
   import { onMounted, ref } from "vue";
+  import EventService from "@/VueMastery_RealWorldVue3/services/EventService";
   import IEvent from "../types/IEvent";
 
   const event = ref<IEvent>();

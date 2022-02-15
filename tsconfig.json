@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
     "target": "esnext",
