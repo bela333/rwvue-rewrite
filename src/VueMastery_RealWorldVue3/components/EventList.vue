@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-  import EventCard from "@/VueMastery_RealWorldVue3/components/EventCard.vue";
   import EventService from "@/VueMastery_RealWorldVue3/services/EventService";
+  import EventCard from "@/VueMastery_RealWorldVue3/components/EventCard.vue";
   import { onMounted, ref } from "vue";
   import IEvent from "../types/IEvent";
 
