@@ -6,23 +6,24 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
   import EventService from "@/VueMastery_RealWorldVue3/services/EventService";
-  export default {
-    props: ["id"],
-    data() {
-      return {
-        event: null,
-      };
+  import { onMounted, ref } from "vue";
+  import IEvent from "../types/IEvent";
+
+  const event = ref<IEvent>();
+  const props = defineProps({
+    id: {
+      type: Number,
+      required: true,
     },
-    created() {
-      EventService.getEvent(this.id)
-        .then((response) => {
-          this.event = response.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  };
+  });
+
+  onMounted(() => {
+    EventService.getEvent(props.id)
+      .then((response) => {
+        event.value = response.data;
+      })
+      .catch(console.log);
+  });
 </script>
