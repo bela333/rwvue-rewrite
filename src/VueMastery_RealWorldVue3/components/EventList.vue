@@ -7,10 +7,11 @@
 
 <script setup lang="ts">
   import EventCard from "@/VueMastery_RealWorldVue3/components/EventCard.vue";
-  import EventService from "@/VueMastery_RealWorldVue3/services/EventService.js";
+  import EventService from "@/VueMastery_RealWorldVue3/services/EventService";
   import { onMounted, ref } from "vue";
+  import IEvent from "../types/IEvent";
 
-  const events = ref([]);
+  const events = ref<IEvent[]>([]);
 
   onMounted(() => {
     EventService.getEvents()
