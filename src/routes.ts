@@ -62,18 +62,18 @@ const routes: Array<RouteRecordRaw> = [
     component: VueMasteryRealWorldVue3,
     children: [
       {
-        path: "/",
+        path: "/realworldvue3/",
         name: "EventList",
         component: EventList,
       },
       {
-        path: "/event/:id",
+        path: "/realworldvue3/event/:id",
         name: "EventDetails",
         props: true,
         component: EventDetails,
       },
       {
-        path: "/about",
+        path: "/realworldvue3/about",
         name: "About",
         component: AboutComp,
       },
