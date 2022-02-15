@@ -5,29 +5,20 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
   import EventCard from "@/VueMastery_RealWorldVue3/components/EventCard.vue";
   import EventService from "@/VueMastery_RealWorldVue3/services/EventService.js";
-  export default {
-    name: "EventList",
-    components: {
-      EventCard,
-    },
-    data() {
-      return {
-        events: null,
-      };
-    },
-    created() {
-      EventService.getEvents()
-        .then((response) => {
-          this.events = response.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  };
+  import { onMounted, ref } from "vue";
+
+  const events = ref([]);
+
+  onMounted(() => {
+    EventService.getEvents()
+      .then((response) => {
+        events.value = response.data;
+      })
+      .catch(console.log);
+  });
 </script>
 
 <style scoped>
