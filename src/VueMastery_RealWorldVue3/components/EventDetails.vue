@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  import EventService from "@/VueMastery_RealWorldVue3/services/EventService.js";
+  import EventService from "@/VueMastery_RealWorldVue3/services/EventService";
   export default {
     props: ["id"],
     data() {
